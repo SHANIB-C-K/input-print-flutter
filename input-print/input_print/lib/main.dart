@@ -28,14 +28,24 @@ class HomeScreen extends StatelessWidget {
         title: const Text('Input Printer'),
       ),
       body: SafeArea(
-        child: Column(
-          children: [
-            TextField(),
-            ElevatedButton(
-              onPressed: () {},
-              child: Text('Click Here'),
-            )
-          ],
+        child: Padding(
+          padding: EdgeInsets.all(20),
+          child: Column(
+            children: [
+              TextField(
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  hintText: 'Type something',
+                ),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  //Get Date
+                },
+                child: Text('Click Here'),
+              )
+            ],
+          ),
         ),
       ),
     );
