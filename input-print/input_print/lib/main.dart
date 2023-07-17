@@ -24,10 +24,17 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Input Printer'),
+      ),
       body: SafeArea(
         child: Column(
           children: [
             TextField(),
+            ElevatedButton(
+              onPressed: () {},
+              child: Text('Click Here'),
+            )
           ],
         ),
       ),
