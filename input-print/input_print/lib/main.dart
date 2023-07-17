@@ -18,8 +18,17 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class HomeScreen extends StatefulWidget {
+  HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  final _textControler = TextEditingController();
+
+  String _displayText = 'Text will be displayed here';
 
   @override
   Widget build(BuildContext context) {
@@ -35,6 +44,7 @@ class HomeScreen extends StatelessWidget {
             child: Column(
               children: [
                 TextField(
+                  controller: _textControler,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
                     hintText: 'Type something',
@@ -43,10 +53,14 @@ class HomeScreen extends StatelessWidget {
                 ElevatedButton(
                   onPressed: () {
                     //Get Date
+                    print(_textControler.text);
+                    setState(() {
+                      _displayText = _textControler.text;
+                    });
                   },
                   child: Text('Click Here'),
                 ),
-                Text(data)
+                Text(_displayText),
               ],
             ),
           ),
