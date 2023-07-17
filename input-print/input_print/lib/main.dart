@@ -30,21 +30,25 @@ class HomeScreen extends StatelessWidget {
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.all(20),
-          child: Column(
-            children: [
-              TextField(
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  hintText: 'Type something',
+          child: Container(
+            color: Colors.yellow[100],
+            child: Column(
+              children: [
+                TextField(
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    hintText: 'Type something',
+                  ),
                 ),
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  //Get Date
-                },
-                child: Text('Click Here'),
-              )
-            ],
+                ElevatedButton(
+                  onPressed: () {
+                    //Get Date
+                  },
+                  child: Text('Click Here'),
+                ),
+                Text(data)
+              ],
+            ),
           ),
         ),
       ),
